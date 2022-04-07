@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="header.css" />
+    <link rel="stylesheet" type="text/css" href="products.css" />
+
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <script
+      src="https://kit.fontawesome.com/c2137faacd.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+    <title>Document</title>
+  </head>
+  <body ng-app="app">
+    <div id="topmenu">
+      <div class="bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input class="search" type="text" placeholder="Search..." />
+      </div>
+      <div class="rightbar">
+        <a href="#!login" class="user-login"><i class="fa-solid fa-user"></i> Login</a>
+        <div class="cart"><i class="fa-solid fa-bag-shopping"></i></div>
+      </div>
+    </div>
+    <!--FECHAMENTO DO MENU SUPERIOR-->
+
+    <!--main menu-->
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <!--main container for the products-->
+
+    <main ng-view id="container">
+    </main>
+
+    <!--FOOTER-->
+
+    <footer>
+      <div class="categories">
+        <p class="text strong footer">SHOP</p>
+        <ul>
+          <li class="listfooter">About me</li>
+          <li class="listfooter">Shipping</li>
+          <li class="listfooter">Returns</li>
+          <li class="listfooter">FAQ</li>
+        </ul>
+      </div>
+      <div class="carreira">
+        <p class="text strong footer">HELP</p>
+        <ul>
+          <li class="listfooter">Contact Us</li>
+          <li class="listfooter">Terms & Conditions</li>
+          <li class="listfooter">Privacy Policy</li>
+          <li class="listfooter">Cookie Policy</li>
+        </ul>
+      </div>
+
+      <div class="subscribe">
+        <p class="text strong footer">SIGN UP FOR OUR NEWSLETTER</p>
+        <input type="text" placeholder="Enter your email here" />
+        <button type="button">SUBSCRIBE NOW</button>
+      </div>
+    </footer>
+    <!-- Complement footer -->
+    <div class="copyright">
+      <ul class="social_footer_ul">
+        <li>
+          <a href="#"><i class="fab fa-facebook-f fa-2x"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+        </li>
+      </ul>
+    </div>
+    <div class="textcopyright">
+      <p class="text-center-strong">
+        Copyright @2022 | Designed by <a href="#">Laura & Minji</a>
+      </p>
+    </div>
+  </body>
+  <script src="./js/index.js"></script>
+</html>

@@ -1,0 +1,24 @@
+<div class="banner">
+  <h1>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, quibusdam.
+  </h1>
+  <h3>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
+    reprehenderit.
+  </h3>
+  <a href="#">SHOP NOW</a>
+</div>
+<section class="products" >
+  <article class="product" ng-repeat="(key,item) in Products">
+    <div class="img">
+      <img  ng-src="{{item.img}}" alt="product-img" />
+      <button ng-click="ShowModal(key)">Quick View</button>
+    </div>
+    <div class="content">
+      <h4 ng-bind="item.name"></h4>
+      <p ng-bind="item.price" class="price"></p>
+    </div>
+    <button class="addToCart" ng-click="addProductToCart(key)">Add to cart</button>
+  </article>
+</section>
+
