@@ -7,16 +7,22 @@
     reprehenderit.
   </h3>
   <a href="#">SHOP NOW</a>
+  <img src="img/ph11.jpg"/>
+</div>
+<div class="banner2">
+  <h3>OUR COLLECTION</h3>
+  <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. I’m a great place for you to tell a story and let your users know a little more about you</p>
 </div>
 <section class="products" >
   <article class="product" ng-repeat="(key,item) in Products">
     <div class="img">
-      <img  ng-src="{{item.img}}" alt="product-img" />
+      <img  ng-src="{{'../img/'+item.img}}" alt="product-img" />
+      <span ng-click="toggleFavorite(key)" class="favorite-btn"><i ng-class="{'fa-regular fa-heart':!item.favorite,'fa-solid fa-heart':item.favorite}"></i></span>
       <button ng-click="ShowModal(key)">Quick View</button>
     </div>
     <div class="content">
       <h4 ng-bind="item.name"></h4>
-      <p ng-bind="item.price" class="price"></p>
+      <p ng-bind="item.price|currency" class="price"></p>
     </div>
     <button class="addToCart" ng-click="addProductToCart(key)">Add to cart</button>
   </article>

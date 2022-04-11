@@ -4,7 +4,7 @@
     height: 50px;
     padding: 0;
     margin: auto;
-    background-color: rgb(213, 205, 219);
+    background-color: #EBE5E1;
     display:flex;
     justify-content: space-between;
     align-items:center;
@@ -12,7 +12,7 @@
 
 #topmenu  .bar {
     width: 40%;
-    background-color: rgb(213, 205, 219);
+    background-color: #EBE5E1;
     padding-left: 20px;
 }
 
@@ -24,7 +24,7 @@
 }
 
 i.fa-solid.fa-magnifying-glass {
-    background-color: rgb(213, 205, 219);
+    background-color: #EBE5E1;
     width: 20px;
 }
 
@@ -41,10 +41,10 @@ input.search {
     text-decoration: none;
     color:black;
 }
-#topmenu .rightbar .cart {
+#topmenu .rightbar .cartIcon {
     padding-right: 30px;
 }
-#topmenu .rightbar .cart:hover {
+#topmenu .rightbar .cartIcon:hover {
     cursor:pointer;
 }
 .navbar {
@@ -76,32 +76,7 @@ input.search {
 .navbar ul li a:hover{
     color: rgb(213, 205, 219);
 }
-.banner{
-    width:90%;
-    margin: auto;
-    height:100vh;
-    background-color: pink;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.banner h1{
-    margin-bottom: 20px;
-}
-.banner a {
-    text-decoration: none;
-    font-size: 30px;
-    color:white;
-    background-color: rgb(52, 51, 51);
-    padding: 15px;
-    margin-top: 30px;
-    transition: transform 0.3s;
-}
-.banner a:hover{
-    font-weight: bold;
-    transform: scale(1.1);
-}
+
 #header {
     background-color: rgb(213, 205, 219);
     height: 390px;
