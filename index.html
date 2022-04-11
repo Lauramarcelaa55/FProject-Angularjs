@@ -7,6 +7,18 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" type="text/css" href="header.css" />
     <link rel="stylesheet" type="text/css" href="products.css" />
+    <link rel="stylesheet" type="text/css" href="cart.css" />
+
+    <script>
+      window.onload = function () {
+        document.body.classList.remove("preload");
+      };
+    </script>
+    <style>
+      .preload * {
+        transition: none !important;
+      }
+    </style>
 
     <link rel="shortcut icon" href="img/favicon.ico" />
     <script
@@ -15,17 +27,21 @@
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
-    <title>Document</title>
+    <title>Iris</title>
   </head>
-  <body ng-app="app">
+  <body ng-app="app" class="preload">
     <div id="topmenu">
       <div class="bar">
         <i class="fa-solid fa-magnifying-glass"></i>
         <input class="search" type="text" placeholder="Search..." />
       </div>
       <div class="rightbar">
-        <a href="#!login" class="user-login"><i class="fa-solid fa-user"></i> Login</a>
-        <div class="cart"><i class="fa-solid fa-bag-shopping"></i></div>
+        <a href="#!login" class="user-login"
+          ><i class="fa-solid fa-user"></i> Login</a
+        >
+        <div class="cartIcon">
+          <i ng-click="showCart()" class="fa-solid fa-bag-shopping"></i>
+        </div>
       </div>
     </div>
     <!--FECHAMENTO DO MENU SUPERIOR-->
@@ -41,11 +57,37 @@
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
-    
+
     <!--main container for the products-->
 
-    <main ng-view id="container">
-    </main>
+    <aside ng-class="{'cart':!cartVisible,'cart visible':cartVisible}">
+      <div class="cartTitle">
+        <span class="backbutton" ng-click="showCart()">></span>
+        <h2>Cart</h2>
+      </div>
+
+      <section class="cartProducts">
+        <article class="product" ng-repeat="(key,item) in cartItems">
+          <img ng-src="{{'./img/'+item.product.img}}" alt="product-img" />
+          <span class="productName" ng-bind="item.product.name"></span>
+          <span
+            class="productPrice"
+            ng-bind="item.product.price|currency"
+          ></span>
+
+          <div class="quantityControl">
+            <button ng-click="removeProductFromCart(key)">-</button>
+            <span ng-bind="item.quantity"></span>
+            <button ng-click="addProductToCart(key)">+</button>
+          </div>
+        </article>
+      </section>
+      <div class="totalContainer">
+        <span class="totalLabel">Total <span>{{calcCartTotal()|currency}}</span></span>
+      </div>
+      <button class="btnCheckout">Checkout<button/>
+    </aside>
+    <main ng-view id="container"></main>
 
     <!--FOOTER-->
 
