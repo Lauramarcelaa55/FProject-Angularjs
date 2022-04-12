@@ -93,6 +93,9 @@ app.run(function ($rootScope) {
   $rootScope.showCart=function(){
     $rootScope.cartVisible=!$rootScope.cartVisible;
   }
+  $rootScope.hideCart=function(){
+    $rootScope.cartVisible=false;
+  }
   $rootScope.cartItems = Object.fromEntries(cartMap.entries());
   $rootScope.calcCartTotal = function () {
     let total = 0;
@@ -130,6 +133,10 @@ app.run(function ($rootScope) {
     }
     $rootScope.cartItems = Object.fromEntries(cartMap.entries());
   };
+  $rootScope.checkout= function(){
+    $rootScope.cartVisible=false;
+    window.location="#!payment"
+  }
 });
 app.controller("products_ctrl", function ($scope, $rootScope) {
   $scope.selectedProduct = {};
@@ -155,4 +162,57 @@ app.controller("products_ctrl", function ($scope, $rootScope) {
     $scope.Products = Object.fromEntries(productsMap.entries());
   };
   
+});
+app.controller("payment_ctrl",function($scope,$rootScope){
+  $scope.orderForm={
+    firstname:"",
+    lastname:"",
+    email:"",
+    phone:"",
+    country:"",
+    city:"",
+    address:"",
+    postalCode:"",
+    cardNumber:"",
+    cardName:"",
+    expiryDate:"",
+    securityCode:""
+  }
+  $scope.validateFirstName=function(e){
+    const regex=/[a-zA-Z]/g;
+    const currentValue=e.currentTarget.value;
+    const valid=regex.test(currentValue);
+    if(!valid){
+      e.preventDefault();
+      return;
+    }
+  }
+  $scope.validateLastName=function(e){
+    
+  }
+  $scope.validateEmail=function(e){
+    
+  }
+  $scope.validateCountry=function(e){
+    
+  }
+  $scope.validateCity=function(e){
+    
+  }
+  $scope.validateAddress=function(e){
+    
+  }
+  $scope.validatePostalCode=function(e){
+    
+  }
+  $scope.validateCardNumber=function(e){
+    
+  }
+  $scope.validateExpiryDate=function(e){
+    
+  }
+  $scope.validateSecurityCode=function(e){
+    
+  }
+
 });

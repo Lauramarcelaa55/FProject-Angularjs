@@ -25,7 +25,7 @@
   max-width: 1480px;
   justify-content: center;
   display: flex;
-  background-color: snow;
+  background-color: white;
 }
 
 .products-section .row {
@@ -36,7 +36,7 @@
 
 footer {
   display: flex;
-  background-color: #d5c5bc;
+  background-color: #c8b7bf;
   width: 90%;
   margin: auto;
   height: 340px;
@@ -142,7 +142,7 @@ p.description.footer {
   display: flex;
   justify-content: center;
   height: 50px;
-  background-color: #d5c5bc;
+  background-color: #c8b7bf;
   color: black;
 }
 
@@ -164,7 +164,7 @@ p.description.footer {
   width: 90%;
   margin: auto;
   padding-bottom: 20px;
-  background-color: #d5c5bc;
+  background-color: #c8b7bf;
   display: flex;
   justify-content: center;
 }

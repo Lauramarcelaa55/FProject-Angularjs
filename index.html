@@ -29,8 +29,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
     <title>Iris</title>
   </head>
-  <body ng-app="app" class="preload">
-    <div id="topmenu">
+  <body ng-app="app" class="preload"  >
+    <div id="topmenu" ng-click="hideCart()">
       <div class="bar">
         <i class="fa-solid fa-magnifying-glass"></i>
         <input class="search" type="text" placeholder="Search..." />
@@ -39,8 +39,8 @@
         <a href="#!login" class="user-login"
           ><i class="fa-solid fa-user"></i> Login</a
         >
-        <div class="cartIcon">
-          <i ng-click="showCart()" class="fa-solid fa-bag-shopping"></i>
+        <div class="cartIcon" ng-click="showCart();$event.stopPropagation()">
+          <i  class="fa-solid fa-bag-shopping"></i>
         </div>
       </div>
     </div>
@@ -48,7 +48,7 @@
 
     <!--main menu-->
 
-    <nav class="navbar">
+    <nav class="navbar" ng-click="hideCart()">
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">Shop</a></li>
@@ -59,7 +59,7 @@
     </nav>
 
     <!--main container for the products-->
-
+    <div ng-class="{'cartbackground':!cartVisible,'cartbackground visible':cartVisible}" ng-click="hideCart()"></div>
     <aside ng-class="{'cart':!cartVisible,'cart visible':cartVisible}">
       <div class="cartTitle">
         <span class="backbutton" ng-click="showCart()">></span>
@@ -85,13 +85,17 @@
       <div class="totalContainer">
         <span class="totalLabel">Total <span>{{calcCartTotal()|currency}}</span></span>
       </div>
-      <button class="btnCheckout">Checkout<button/>
+      <div class="cartButtons">
+        <button class="btnCheckout" ng-click="checkout()">Checkout</button>
+        <button class="btnShopping" ng-click="hideCart()">Continue shopping</button>
+      </div>
+      
     </aside>
-    <main ng-view id="container"></main>
+    <main ng-view id="container" ng-click="hideCart()"></main>
 
     <!--FOOTER-->
 
-    <footer>
+    <footer ng-click="hideCart()">
       <div class="categories">
         <p class="text strong footer">SHOP</p>
         <ul>
