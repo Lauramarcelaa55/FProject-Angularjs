@@ -1,18 +1,44 @@
-<div>
-    <input  id="firstname" type="text" />
-    <input id="lastname" type="text"/>
-    <input id="email" type="email"/>
-    <input id="phone" type="phone"/> 
-    <select id="country" ng-model="country"></select>   
-    <select id="city" ng-model="city"></select>
-    <input id="address" type="text" ng-model="address"/>
-    <input id="postalCode" type="text" ng-model="postalCode"/>
-    <input id="cardNumber" type="text" ng-model="cardNumber"/>
-    <input id="cardName" type="text" ng-model="cardName"/>
-    <input id="expiryDate" type="text" ng-model="expiryDate"/>
-    <input id="securityCode" type="text" ng-model="securityCode"/>
-    <button>Place Order</button>
-    <!-- 
+<div class="checkoutForm">
+  <label id="firstnameLabel" for="firstname">First Name</label>
+  <input
+    ng-model="orderForm.firstname"
+    id="firstname"
+    type="text"
+    onkeydown="validateFirstName(event)"
+  />
+  <label for="lastname" id="lastnameLabel">Last Name</label>
+  <input id="lastname" type="text" onkeydown="validateLastName(event)"/>
+  <label for="email" id="emailLabel">Email</label>
+  <input id="email" type="email" />
+  <label for="country" id="countryLabel">Country</label>
+  <select id="country" ng-model="orderForm.country" ng-change="countryChange($event)">
+    <option value="Canada">Canada</option>
+    <option value="USA">USA</option>
+  </select>
+  <label for="city" id="cityLabel">State</label>
+  <select id="city" ng-model="orderForm.city" ng-options="key as state for (key,state) in States" >
+  </select>
+  <label for="address" id="addressLabel" >Address</label>
+  <input
+    id="address"
+    type="text"
+    ng-model="address"
+    onkeydown="validateAddress(event)"
+  />
+  <label for="phone" id="phoneLabel">Phone</label>
+  <input id="phone" type="phone" onkeydown="validatePhone(event)"/>
+  <label for="postalCode" id="postalCodeLabel" >Postal Code</label>
+  <input id="postalCode" type="text" ng-model="postalCode" onkeydown="validatePostalCode(event)" />
+  <label for="cardName" id="cardNameLabel">Card Name</label>
+  <input id="cardName" type="text" ng-model="cardName" onkeydown="validateCardName(event)"/>
+  <label for="cardNumber" id="cardNumberLabel"> Card Number</label>
+  <input id="cardNumber" type="text" ng-model="cardNumber" onkeydown="ccNumberInputKeyDownHandler(event)" oninput="ccNumberInputInputHandler(event)" />
+  <label for="expiryDate" id="expiryDateLabel">Expiry Date</label>
+  <input id="expiryDate" type="text" ng-model="expiryDate" onkeydown="ccExpiryInputKeyDownHandler(event)" oninput="ccExpiryInputInputHandler(event)" />
+  <label for="securityCode" id="securityCodeLabel">Security Code</label>
+  <input id="securityCode" type="text" ng-model="securityCode" onkeydown="securityCodeInputHandler(event)"/>
+  <button id="btnCheckout" ng-click="completeCheckout()">Place Order</button>
+  <!-- 
         firstname
         lastname
         email
@@ -27,3 +53,7 @@
         security code
      -->
 </div>
+
+<script>
+  
+</script>

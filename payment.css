@@ -1,0 +1,94 @@
+.checkoutForm{
+    display:grid;
+    grid-template-areas: 
+    "firstnameLabel firstnameLabel"
+    "firstname firstname"
+    "lastnameLabel lastnameLabel"
+    "lastname lastname"
+    "emailLabel emailLabel"
+    "email email"
+    "countryLabel cityLabel"
+    "country city"
+    "addressLabel addressLabel"
+    "address address"
+    "phoneLabel postalCodeLabel"
+    "phone postalCode"
+    "cardNameLabel cardNameLabel"
+    "cardName cardName"
+    "cardNumberLabel cardNumberLabel"
+    "cardNumber cardNumber"
+    "expiryDateLabel securityCodeLabel"
+    "expiryDate securityCode";
+}
+#firstname{
+    grid-area:firstname;
+}
+#firstnameLabel{
+    grid-area:firstnameLabel;
+}
+#lastname{
+    grid-area:lastname;
+}
+#lastnameLabel{
+    grid-area:lastnameLabel;
+}
+#email{
+    grid-area:email;
+}
+#emailLabel{
+    grid-area:emailLabel;
+}
+#phone{
+    grid-area:phone;
+}
+#phoneLabel{
+    grid-area:phoneLabel;
+}
+#country{
+    grid-area:country;
+}
+#countryLabel{
+    grid-area:countryLabel;
+}
+#city{
+    grid-area:city;
+}
+#cityLabel{
+    grid-area:cityLabel;
+}
+#address{
+    grid-area:address;
+}
+#addressLabel{
+    grid-area:addressLabel;
+}
+#postalCode{
+    grid-area:postalCode;
+}
+#postalCodeLabel{
+    grid-area:postalCodeLabel;
+}
+#cardName{
+    grid-area:cardName;
+}
+#cardNameLabel{
+    grid-area:cardNameLabel;
+}
+#cardNumber{
+    grid-area:cardNumber;
+}
+#cardNumberLabel{
+    grid-area:cardNumberLabel;
+}
+#expiryDate{
+    grid-area:expiryDate;
+}
+#expiryDateLabel{
+    grid-area:expiryDateLabel;
+}
+#securityCode{
+    grid-area:securityCode;
+}
+#securityCodeLabel{
+    grid-area:securityCodeLabel;
+}

@@ -1,14 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500&family=Montserrat:wght@100;200;300;400&family=Roboto:wght@100&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;700&display=swap');
 
 * {
   margin: 0;
   padding: 0;
-  font-family: "Karla", sans-serif;
-  font-family: "Montserrat", sans-serif;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Karla', sans-serif;
   box-sizing: border-box;
 }
 
+html{
+  scroll-behavior: smooth;
+}
 #container {
   width: 100%;
   height: auto;

@@ -7,6 +7,7 @@
   grid-auto-rows: 70vh;
   column-gap: 25px;
   row-gap: 50px;
+  margin-bottom: 40px;
 }
 
 .img {
@@ -78,6 +79,10 @@
 }
 .product .content {
   margin: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 18px;
 }
 
 .banner{
@@ -93,11 +98,13 @@
 
 .banner h1{
   margin-bottom: 20px;
+  font-size: 70px;
+  font-weight: bold;
 }
 
 .banner a {
   text-decoration: none;
-  font-size: 30px;
+  font-size: 25px;
   color:white;
   background-color: rgb(52, 51, 51);
   padding: 15px;
@@ -119,6 +126,10 @@
   filter:blur(2px);
 
 }
+.banner h3{
+  font-weight: inherit;
+}
+
 
 .banner2 {
   height: 30vh;
@@ -132,11 +143,16 @@
   align-items: center;
 }
 
+.banner2 h3{
+  font-size: 25px;
+}
+
 .banner2 p {
   margin-top: 18px;
   justify-content: center;
   display: flex;
   width: 70%;
-
+  font-size: 17px;
+  font-weight: normal;
 }
 
