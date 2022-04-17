@@ -5,7 +5,7 @@
   <h3>
     Our flower arrangements are perfect for showing someone how much you care!  
   </h3>
-  <a href="#">SHOP NOW</a>
+  <a href="#products">SHOP NOW</a>
   <img src="img/ph2.jpg"/>
 </div>
 <div class="banner2">
@@ -15,12 +15,28 @@
 That's why at Iris we want to open a new path: to offer you fresh, local flowers, full of color, prepared with great care and attention, while limiting our environmental impact as much as possible. In our online florist we are committed to creating a new floral culture and concept. 
   </p>
 </div>
+
+<aside class="modalWindow" ng-show="modalVisible">
+  <button class="btnClose" ng-click="closeModal()">X</button>
+  <div class="modalContent">
+    <img id="modalImg" ng-src="{{'../img/'+modal.img}}"/>
+    <h4 id="modalName" ng-bind="modal.name"></h4>
+    <p id="modalPrice" ng-bind="modal.price|currency"></p>
+    <div id="modalControl" class="quantityControl">
+      <button ng-click="removeProductFromCartModal(modal.key)">-</button>
+      <span ng-bind="modal.quantity"></span>
+      <button ng-click="addProductToCartModal(modal.key)">+</button>
+    </div>
+    <button id="modalAddBtn" ng-click="addToCartModal(modal.key)">Add to cart</button>
+  </div>  
+</aside>
+
 <section class="products" id="products" >
   <article class="product" ng-repeat="(key,item) in Products">
-    <div class="img">
+    <div class="img" ng-click="ShowModal(key)">
       <img  ng-src="{{'../img/'+item.img}}" alt="product-img" />
       <span ng-click="toggleFavorite(key)" class="favorite-btn"><i ng-class="{'fa-regular fa-heart':!item.favorite,'fa-solid fa-heart':item.favorite}"></i></span>
-      <button ng-click="ShowModal(key)">Quick View</button>
+      <button >Quick View</button>
     </div>
     <div class="content">
       <h4 ng-bind="item.name"></h4>

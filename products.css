@@ -156,3 +156,91 @@
   font-weight: normal;
 }
 
+.modalWindow{
+  position:fixed; 
+  z-index: 4;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:50vw;
+  height:50vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modalWindow .modalContent{
+  display:grid;
+  width: calc(100% - 30px);
+  height:calc(100% - 30px);
+  
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: repeat(4,25%);
+  grid-template-columns: repeat(2,50%);
+  grid-template-areas: 
+  "modalImg modalName"
+  "modalImg modalPrice"
+  "modalImg modalControl"
+  "modalImg modalAddBtn";
+}
+.modalWindow .btnClose{
+  position:absolute;
+  top:10px;
+  right:10px;
+  background-color: rgb(52, 51, 51);
+  color:white;
+  border: none;
+  font-size: 20px;
+  width:30px;
+  height: 30px;
+}
+.modalWindow .btnClose:hover{
+  cursor:pointer;
+}
+.modalWindow img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+#modalImg{
+  grid-area: modalImg;
+}
+#modalName{
+  grid-area: modalName;
+}
+#modalPrice{
+  grid-area:modalPrice;
+}
+#modalControl{
+  grid-area:modalControl;
+}
+#modalAddBtn{
+  grid-area:modalAddBtn;
+  background-color: rgb(52, 51, 51);
+  color:white;
+  border: none;
+  font-size: 20px;
+  width:300px;
+  height:50px;
+  font-weight: bold;
+  transition:transform 0.3s;
+}
+#modalAddBtn:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.modalbackground{
+  position: fixed;
+  top:0;
+  left:0;
+  background-color: rgba(0, 0, 0, 0);
+  width:100vw;
+  height:100vh;
+  z-index:4;
+  pointer-events:none;
+}
+.modalbackground.visible{
+  pointer-events: all;
+  background-color: rgba(0, 0, 0, 0.513);
+}

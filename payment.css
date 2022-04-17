@@ -1,10 +1,12 @@
-.checkoutForm{
-    display:grid;
-    grid-template-areas: 
-    "firstnameLabel firstnameLabel"
-    "firstname firstname"
-    "lastnameLabel lastnameLabel"
-    "lastname lastname"
+.checkoutForm {
+  display: grid;
+  justify-items: stretch;
+  align-items: center;
+  gap: 20px;
+  grid-template-columns: repeat(2,50%);
+  grid-template-areas:
+    "firstnameLabel lastnameLabel"
+    "firstname lastname"
     "emailLabel emailLabel"
     "email email"
     "countryLabel cityLabel"
@@ -18,77 +20,118 @@
     "cardNumberLabel cardNumberLabel"
     "cardNumber cardNumber"
     "expiryDateLabel securityCodeLabel"
-    "expiryDate securityCode";
+    "expiryDate securityCode"
+    "btnCheckout btnCheckout";
+  width: 40%;
+  margin:40px auto ;
 }
-#firstname{
-    grid-area:firstname;
+#firstname {
+  grid-area: firstname;
 }
-#firstnameLabel{
-    grid-area:firstnameLabel;
+#firstnameLabel {
+  grid-area: firstnameLabel;
 }
-#lastname{
-    grid-area:lastname;
+#lastname {
+  grid-area: lastname;
 }
-#lastnameLabel{
-    grid-area:lastnameLabel;
+#lastnameLabel {
+  grid-area: lastnameLabel;
 }
-#email{
-    grid-area:email;
+#email {
+  grid-area: email;
 }
-#emailLabel{
-    grid-area:emailLabel;
+#emailLabel {
+  grid-area: emailLabel;
 }
-#phone{
-    grid-area:phone;
+#phone {
+  grid-area: phone;
 }
-#phoneLabel{
-    grid-area:phoneLabel;
+#phoneLabel {
+  grid-area: phoneLabel;
 }
-#country{
-    grid-area:country;
+#country {
+  grid-area: country;
 }
-#countryLabel{
-    grid-area:countryLabel;
+#countryLabel {
+  grid-area: countryLabel;
 }
-#city{
-    grid-area:city;
+#city {
+  grid-area: city;
 }
-#cityLabel{
-    grid-area:cityLabel;
+#cityLabel {
+  grid-area: cityLabel;
 }
-#address{
-    grid-area:address;
+#address {
+  grid-area: address;
 }
-#addressLabel{
-    grid-area:addressLabel;
+#addressLabel {
+  grid-area: addressLabel;
 }
-#postalCode{
-    grid-area:postalCode;
+#postalCode {
+  grid-area: postalCode;
 }
-#postalCodeLabel{
-    grid-area:postalCodeLabel;
+#postalCodeLabel {
+  grid-area: postalCodeLabel;
 }
-#cardName{
-    grid-area:cardName;
+#cardName {
+  grid-area: cardName;
 }
-#cardNameLabel{
-    grid-area:cardNameLabel;
+#cardNameLabel {
+  grid-area: cardNameLabel;
 }
-#cardNumber{
-    grid-area:cardNumber;
+#cardNumber {
+  grid-area: cardNumber;
 }
-#cardNumberLabel{
-    grid-area:cardNumberLabel;
+#cardNumberLabel {
+  grid-area: cardNumberLabel;
 }
-#expiryDate{
-    grid-area:expiryDate;
+#expiryDate {
+  grid-area: expiryDate;
 }
-#expiryDateLabel{
-    grid-area:expiryDateLabel;
+#expiryDateLabel {
+  grid-area: expiryDateLabel;
 }
-#securityCode{
-    grid-area:securityCode;
+#securityCode {
+  grid-area: securityCode;
 }
-#securityCodeLabel{
-    grid-area:securityCodeLabel;
+#securityCodeLabel {
+  grid-area: securityCodeLabel;
+}
+#btnCheckout {
+  grid-area: btnCheckout;
+  width: 200px;
+  justify-self: center;
+  font-size: 25px;
+  color: white;
+  background-color: rgb(52, 51, 51);
+  padding: 10px;
+}
+
+/* .checkoutForm {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+
+}
+
+ */
+input {
+  height: 45px;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+select {
+  height: 45px;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border-bottom-width: 2px;
 }

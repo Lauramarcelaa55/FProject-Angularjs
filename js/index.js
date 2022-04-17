@@ -88,11 +88,13 @@ productsMap.forEach((product, key) => {
   }
 });
 
-
-
 app.run(function ($rootScope) {
   $rootScope.cartVisible = false;
   $rootScope.checkoutState=false;
+  $rootScope.modalVisible=false;
+  $rootScope.closeModal=function(){
+    $rootScope.modalVisible=false;
+  }
   $rootScope.userData={
     firstname: localStorage.getItem("user_firstname"),
     lastname: localStorage.getItem("user_lastname"),
@@ -106,7 +108,7 @@ app.run(function ($rootScope) {
     cardName: localStorage.getItem("user_cardname"),
     expiryDate: localStorage.getItem("user_expirydate"),
     securityCode: "",
-  }
+  };
   $rootScope.showCart = function () {
     $rootScope.cartVisible = !$rootScope.cartVisible;
   };
@@ -156,15 +158,38 @@ app.run(function ($rootScope) {
   };
 });
 app.controller("products_ctrl", function ($scope, $rootScope) {
-  $scope.selectedProduct = {};
-  $scope.isOpen = false;
+  $scope.selectedProduct={
+    key:"",
+    product:{}
+  };
+  $scope.modal = {
+    quantity:0
+  };
+  
   $scope.Products = Object.fromEntries(productsMap.entries());
-
+  
   $scope.ShowModal = function (key) {
     let product = productsMap.get(key);
-    $scope.selectedProduct = product;
-    $scope.isOpen = true;
+    let cartProduct = cartMap.get(key);
+    $scope.modal = {key, ...product, quantity:cartProduct?.quantity||0};
+    $rootScope.modalVisible = true;
   };
+  $scope.removeProductFromCartModal=function(key){
+    $rootScope.removeProductFromCart(key)
+    $scope.modal.quantity=JSON.parse(localStorage.getItem("cart"+key))?.quantity||0;
+  }
+  $scope.addProductToCartModal=function(key){
+    console.log($scope.modal);
+    $rootScope.addProductToCart(key)
+    $scope.modal.quantity=JSON.parse(localStorage.getItem("cart"+key))?.quantity||0;
+  }
+  $scope.addToCartModal= function(key){
+    $rootScope.modalVisible = false;
+    if($scope.modal.quantity>0){
+      return;
+    }
+    $rootScope.addProductToCart(key)
+  }
   $scope.toggleFavorite = function (key) {
     let product = productsMap.get(key);
     if (product.favorite) {

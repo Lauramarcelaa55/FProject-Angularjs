@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="products.css" />
     <link rel="stylesheet" type="text/css" href="cart.css" />
     <link rel="stylesheet" type="text/css" href="payment.css" />
-
+    <link rel="stylesheet" type="text/css" href="order.css" />
 
     <script>
       window.onload = function () {
@@ -32,6 +32,7 @@
     <title>Iris</title>
   </head>
   <body ng-app="app" class="preload"  >
+    <div ng-show="modalIsVisible"></div>
     <div id="topmenu" ng-click="hideCart()">
       <div class="bar">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -53,7 +54,7 @@
     <nav class="navbar" ng-click="hideCart()">
       <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#">Shop</a></li>
+        <li><a href="#products">Shop</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Blog</a></li>
         <li><a href="#">Contact</a></li>
@@ -61,7 +62,11 @@
     </nav>
 
     <!--main container for the products-->
+
+    <div ng-class="{'modalbackground':!modalVisible,'modalbackground visible':modalVisible}" ng-click="closeModal()"></div>
+    
     <div ng-class="{'cartbackground':!cartVisible,'cartbackground visible':cartVisible}" ng-click="hideCart()"></div>
+
     <aside ng-class="{'cart':!cartVisible,'cart visible':cartVisible}">
       <div class="cartTitle">
         <span class="backbutton" ng-click="showCart()">></span>

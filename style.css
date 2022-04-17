@@ -179,3 +179,10 @@ p.description.footer {
 .textcopyright p.text-center-strong a {
   color: black;
 }
+
+hr{
+  width:90%;
+  margin:auto;
+  border-top: 1px solid #c8b7bf;
+}
+
